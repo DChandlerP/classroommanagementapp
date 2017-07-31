@@ -1,4 +1,4 @@
-package com.chandler.classroommanagementapp.Model;
+package com.chandler.classroommanagementapp.model.forms;
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -16,21 +16,17 @@ public class Classroom {
 
     @NotNull
     @OneToMany
-    private String classNumber;
+    private Classroom classNumber;
 
     public Classroom() {
     }
 
-    public Classroom(int id, String classNumber) {
+    public Classroom(int id, Classroom classNumber) {
         this.id = id;
         this.classNumber = classNumber;
     }
 
     public int getId() {
         return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
     }
 }

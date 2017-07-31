@@ -1,4 +1,4 @@
-package com.chandler.classroommanagementapp.Model;
+package com.chandler.classroommanagementapp.model.forms;
 
 import javax.persistence.Column;
 import javax.persistence.Embeddable;
