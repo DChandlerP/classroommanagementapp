@@ -34,6 +34,15 @@ public class Student {
         this.id = id;
     }
 
+    @Override
+    public String toString() {
+        return
+                "studentID=" + studentID +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", classroom=" + classroom;
+    }
+
     public String getFirstName() {
         return firstName;
     }

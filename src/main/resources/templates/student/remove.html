@@ -9,13 +9,13 @@
 
 <form method="post">
 
-    <div th:each="cheese : ${cheeses}" class="checkbox">
-        <input type="checkbox" name="id" th:value="${cheese.id}" th:id="${cheese.id}"/>
-        <label th:for="${cheese.id}" th:text="${cheese.name}"></label>
+    <div th:each="student : ${students}" class="checkbox">
+        <input type="checkbox" name="id" th:value="${student.id}" th:id="${student.id}"/>
+        <label th:for="${student.id}" th:text="${student.toString()}"></label>
         <br/>
     </div>
 
-    <input type="submit" value="Remove Cheese" />
+    <input type="submit" value="Remove Student" />
 </form>
 
 </body>
