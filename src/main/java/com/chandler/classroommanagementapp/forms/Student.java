@@ -15,11 +15,14 @@ public class Student {
     @GeneratedValue
     private Integer id;
 
-    @Embedded
-    private Person student;
-
     @NotNull
     private Integer studentID;
+
+    @NotNull
+    private String firstName;
+
+    @NotNull
+    private String lastName;
 
     @ManyToOne
     private Classroom classroom;
@@ -27,13 +30,25 @@ public class Student {
     public Student() {
     }
 
-    public Student(Integer id, Person student, Integer studentID, Classroom classroom) {
+    public Student(Integer id) {
         this.id = id;
-        this.student = student;
-        this.studentID = studentID;
-        this.classroom = classroom;
     }
 
+    public String getFirstName() {
+        return firstName;
+    }
+
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
 
     public Integer getId() {
         return id;
@@ -41,14 +56,6 @@ public class Student {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Person getStudent() {
-        return student;
-    }
-
-    public void setStudent(Person student) {
-        this.student = student;
     }
 
     public Integer getStudentID() {
