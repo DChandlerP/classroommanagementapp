@@ -11,9 +11,6 @@ import java.io.IOException;
 import java.util.Arrays;
 import java.util.List;
 
-/**
- * Created by LaunchCode
- */
 public class AuthenticationInterceptor extends HandlerInterceptorAdapter {
 
     @Autowired
@@ -23,7 +20,7 @@ public class AuthenticationInterceptor extends HandlerInterceptorAdapter {
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws IOException {
 
         // Authentication white list; add all publicly visible pages here
-        List<String> nonAuthPages = Arrays.asList("/login", "/register");
+        List<String> nonAuthPages = Arrays.asList("/login", "/register", "/index");
 
         // Require sign-in for auth pages
         if ( !nonAuthPages.contains(request.getRequestURI()) ) {

@@ -15,9 +15,6 @@ import javax.servlet.http.HttpServletRequest;
 import javax.validation.Valid;
 
 
-/**
- * Created by LaunchCode
- */
 @Controller
 public class AuthenticationController extends AbstractController {
 
