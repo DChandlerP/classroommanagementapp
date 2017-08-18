@@ -1,7 +1,7 @@
 package com.chandler.classroommanagementapp.controllers;
 
-import com.chandler.classroommanagementapp.model.forms.Classroom;
-import com.chandler.classroommanagementapp.models.data.ClassroomDAO;
+import com.chandler.classroommanagementapp.forms.Classroom;
+import com.chandler.classroommanagementapp.data.ClassroomDAO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,7 +18,7 @@ import javax.validation.Valid;
  */
 
 @Controller
-@RequestMapping("Classroom")
+@RequestMapping("classroom")
 public class ClassroomController {
 
     @Autowired
@@ -26,8 +26,8 @@ public class ClassroomController {
 
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String index(Model model, @RequestParam(defaultValue = "0") int id) {
-        model.addAttribute("title", "Classrooms");
-        model.addAttribute("Classrooms", classroomDAO.findAll());
+        model.addAttribute("title", "classrooms");
+        model.addAttribute("classrooms", classroomDAO.findAll());
         return "classroom/index";
     }
 

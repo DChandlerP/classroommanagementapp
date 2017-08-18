@@ -1,6 +1,6 @@
-package com.chandler.classroommanagementapp.models.data;
+package com.chandler.classroommanagementapp.data;
 
-import com.chandler.classroommanagementapp.model.forms.Student;
+import com.chandler.classroommanagementapp.forms.Classroom;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -11,5 +11,5 @@ import javax.transaction.Transactional;
  */
 @Repository
 @Transactional
-public interface StudentDAO extends CrudRepository<Student, Integer>{
+public interface ClassroomDAO extends CrudRepository<Classroom, Integer> {
 }
