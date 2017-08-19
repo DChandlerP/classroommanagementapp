@@ -37,10 +37,10 @@ public class Student {
     @Override
     public String toString() {
         return
-                "studentID=" + studentID +
-                ", firstName='" + firstName + '\'' +
-                ", lastName='" + lastName + '\'' +
-                ", classroom=" + classroom;
+                "Student ID: " + studentID +
+                " " + firstName +
+                " " + lastName +
+                " Class " + classroom;
     }
 
     public String getFirstName() {
