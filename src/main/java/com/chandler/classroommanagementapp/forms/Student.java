@@ -38,9 +38,8 @@ public class Student {
     public String toString() {
         return
                 "Student ID: " + studentID +
-                " " + firstName +
-                " " + lastName +
-                " Class " + classroom;
+                "  |  " + firstName + " " + lastName + "  |  " +
+                " Class " + classroom.getName();
     }
 
     public String getFirstName() {
