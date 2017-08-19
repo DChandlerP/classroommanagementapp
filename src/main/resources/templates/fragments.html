@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:fragment="head">
     <meta charset="UTF-8"/>
-    <title th:text="${title}">Class Management System</title>
+    <title th:text="${title}">Classroom Management System</title>
 
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -10,11 +10,26 @@
 </head>
 <body>
 
-<nav th:fragment="navigation">
-    <a href="/">Home</a> |
-    <a href="/students/add">Add</a> |
-    <a href="/students/remove">Remove</a> |
-    <a href="/class">Classrooms</a> |
+<nav th:fragment="navigation" class="navbar navbar-inverse navbar-fixed-top" >
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Classroom Management App</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+                <li class="active"><a href="/student">Home</a></li>
+                <li><a href="/student/add">Add Student</a></li>
+                <li><a href="/student/remove">Remove Student</a></li>
+                <li><a href="classroom">Classrooms</a></li>
+            </ul>
+        </div><!--/.nav-collapse -->
+    </div>
 </nav>
 
 </body>

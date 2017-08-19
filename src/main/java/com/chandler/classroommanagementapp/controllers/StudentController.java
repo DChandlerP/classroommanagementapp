@@ -46,7 +46,7 @@ public class StudentController {
 
     @RequestMapping(value = "add", method = RequestMethod.POST)
     public String processAddStudentForm(@ModelAttribute @Valid Student newStudent,
-                                       Errors errors, @RequestParam int categoryId, Model model) {
+                                       Errors errors, @RequestParam int classroomID, Model model) {
 
         if (errors.hasErrors()) {
             model.addAttribute("title", "Add Student");
@@ -54,7 +54,7 @@ public class StudentController {
             return "student/add";
         }
 
-        Classroom cat = classroomDAO.findOne(categoryId);
+        Classroom cat = classroomDAO.findOne(classroomID);
         newStudent.setClassroom(cat);
         studentDAO.save(newStudent);
         return "redirect:";
@@ -77,13 +77,13 @@ public class StudentController {
         return "redirect:";
     }
 
-    @RequestMapping(value = "category", method = RequestMethod.GET)
+    @RequestMapping(value = "classroom", method = RequestMethod.GET)
     public String classroom(Model model, @RequestParam int id) {
 
         Classroom cat = classroomDAO.findOne(id);
         List<Student> students = cat.getStudents();
         model.addAttribute("students", students);
-        model.addAttribute("title", "Students in Classroom: " + cat.getName());
+        model.addAttribute("title", "Students in Class " + cat.getName());
         return "student/index";
     }
 

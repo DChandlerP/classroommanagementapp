@@ -26,7 +26,7 @@ public class ClassroomController {
 
     @RequestMapping(value = "", method = RequestMethod.GET)
     public String index(Model model, @RequestParam(defaultValue = "0") int id) {
-        model.addAttribute("title", "classrooms");
+        model.addAttribute("title", "Classrooms:");
         model.addAttribute("classrooms", classroomDAO.findAll());
         return "classroom/index";
     }
@@ -34,7 +34,7 @@ public class ClassroomController {
     @RequestMapping(value = "add", method = RequestMethod.GET)
     public String add(Model model) {
         model.addAttribute(new Classroom());
-        model.addAttribute("title", "Add Class");
+        model.addAttribute("title", "Add Classroom");
         return "classroom/add";
     }
 

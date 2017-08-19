@@ -1,11 +1,33 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
-<body>
-<ul>
-    <li th:each="category : ${categories}">
-        <a th:href="'/cheese/category?id=' + ${category.id}" th:text="${category.name}"></a>
-    </li>
-</ul>
+<nav th:replace="fragments :: navigation"></nav>
+
+<body class="container">
+<br/>
+<br/>
+<h1 th:text="${title}">Default Title</h1>
+
+<p th:unless="${students} and ${students.size()}">No Students Currently in Database.</p>
+
+
+<table class="table">
+
+    <tr>
+        <th>First Name</th>
+        <th>Last Name</th>
+        <th>Student ID</th>
+        <th>Classroom</th>
+    </tr>
+
+    <tr th:each="student : ${students}">
+        <td th:text="${student.firstName}"></td>
+        <td th:text="${student.lastName}"></td>
+        <td th:text="${student.studentID}"></td>
+        <td th:text="${student.classroom.name}"></td>
+    </tr>
+
+</table>
+
 </body>
 </html>

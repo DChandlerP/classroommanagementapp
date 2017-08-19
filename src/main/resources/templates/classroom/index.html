@@ -1,12 +1,17 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
+<nav th:replace="fragments :: navigation"></nav>
 <body class="container">
+<br/>
+<br/>
+<h2 th:text="${title}">Default Title</h2>
+<h3 th:unless="${classrooms} and ${classrooms.size()}">No Classrooms Currently In Database.</h3>
 <ul>
-    <li th:each="class : ${classrooms}">
+    <li th:each="classroom : ${classrooms}">
         <a th:href="'/student/classroom?id=' + ${classroom.id}" th:text="${classroom.name}"></a>
     </li>
 </ul>
-<p><a href="/category/add">Add Category</a></p>
+<p><a href="/classroom/add">Add Classroom</a></p>
 </body>
 </html>
